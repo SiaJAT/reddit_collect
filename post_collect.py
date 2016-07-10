@@ -28,6 +28,19 @@ class RedditCollect:
 				print "Comment " + str(comment_counter) + ": " + str(comment.body)
 				comment_counter += 1
 			print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+	
+	def proc_post:
+		pass
+
+	def proc_image:
+		pass
+	
+	def proc_comments:
+		pass
+
+	def agg_ratings:
+		pass
+
 
 
 if __name__ == "__main__":
