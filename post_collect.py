@@ -1,5 +1,6 @@
 import praw
 import sys
+import json
 
 class RedditCollect:
 
@@ -10,7 +11,7 @@ class RedditCollect:
 			self.password = content_config[1]
 			self.user_agent = content_config[2]	
 			self.reddit_obj = praw.Reddit(user_agent=self.user_agent)
-			self.reddit_obj.login(self.user, self.password)
+			self.reddit_obj.login(self.user, self.password, disable_warning=True)
 			
 			
 	def top_from_subreddit(self, limit_num, subreddit_name):
@@ -24,7 +25,7 @@ class RedditCollect:
 			print "======================================================="
 			comment_counter = 0
 			for comment in praw.helpers.flatten_tree(s.comments):
-				print str(comment_counter) + ": " + str(comment)
+				print "Comment " + str(comment_counter) + ": " + str(comment.body)
 				comment_counter += 1
 			print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 
